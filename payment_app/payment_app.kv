@@ -1,0 +1,28 @@
+<PaymentApp>:
+    orientation: 'vertical'
+    user_input: user_input
+    amount_due_input: amount_due_input
+    payment_amount_input: payment_amount_input
+    result_label: result_label
+
+    Label:
+        text: "User Name:"
+    TextInput:
+        id: user_input
+        multiline: False
+    Label:
+        text: "Amount Due:"
+    TextInput:
+        id: amount_due_input
+        multiline: False
+    Label:
+        text: "Payment Amount:"
+    TextInput:
+        id: payment_amount_input
+        multiline: False
+    Label:
+        id: result_label
+        text: ""
+    Button:
+        text: "Process Payment"
+        on_press: root.process_payment()
