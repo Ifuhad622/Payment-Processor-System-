@@ -1,0 +1,4 @@
+kivy
+cython
+flask 
+flask_sqlalchemy
