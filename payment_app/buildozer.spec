@@ -1,13 +1,14 @@
 [app]
+clone_timeout = 300  # Set timeout to 300 seconds (adjust as needed)
 
 # (str) Title of your application
-title = PaymentApp
+title = MelHad Payment App
 
 # (str) Package name
-package.name = paymentapp
+package.name = melhad payment app
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.example
+package.domain = com.example.fuhad.melhad payment app
 
 # (str) Source code where the main.py is located
 source.dir = .
@@ -35,7 +36,7 @@ presplash.filename = %(source.dir)s/data/presplash.png
 icon.filename = %(source.dir)s/data/icon.png
 
 # (list) Permissions
-android.permissions = INTERNET
+android.permissions = 
 
 # (int) Target Android API, should be as high as possible.
 android.api = 31
