@@ -61,7 +61,7 @@ orientation = portrait,landscape
 #
 
 #
-# author = © Copyright Info
+# author = ©2024 MelHad Investment
 
 # change the major version of python used by the app
 osx.python_version = 3
