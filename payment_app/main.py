@@ -1,10 +1,33 @@
+import os
+from kivy.config import Config
+
+# Set environment variable for display
+os.environ['DISPLAY'] = ':1'
+
+# Optionally, configure Kivy to use Xvfb as the window provider
+Config.set('kivy', 'window_backend', 'x11')  # or 'dummy' depending on your setup
+
+# Import the rest of your application components
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
+import yaml
+from dotenv import load_dotenv
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from database import initialize_database
 from payment_processor import PaymentProcessor
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Load configuration from config.yaml
+with open('config/config.yaml', 'r') as config_file:
+    config = yaml.safe_load(config_file)
+
+DATABASE_FILE = config['database']['file']
 
 class PaymentApp(BoxLayout):
     def __init__(self, **kwargs):
@@ -44,5 +67,12 @@ class PaymentAppApp(App):
         return PaymentApp()
 
 if __name__ == '__main__':
-    initialize_database()
+    # Initialize database connection
+    engine = create_engine(f'sqlite:///{DATABASE_FILE}')
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    # Pass configuration to initialize_database if needed
+    initialize_database()  # Modify if initialize_database() requires arguments
+
     PaymentAppApp().run()

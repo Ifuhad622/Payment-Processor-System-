@@ -1,0 +1,11 @@
+database:
+type: sqlite
+  file: payment_processor.db  # The SQLite database file
+
+  host: localhost
+  port: 5432
+  
+                                                                payment_gateway:
+  stripe:                                                           api_key: pk_test_51OiImeAcBZ0vmFyCUiOpNYupFpilMViAqQrjj3KzeEPMlcvcw77oLj91xbynAu8Kzh06OCjuHCos7G9k0CFmwz4Z00SsOUqMuJ            secret_key: sk_test_51OiImeAcBZ0vmFyCIAaxOuYvCwrwuDP9KgCUwKbiMGINxJYGFpOHXF3RM8wq122DujLBkTg92x1vN25nvgLXSULS00XE6VWtE3
+  paypal:                                                           client_id: AcZw00B3hUZSPgI7Cf6XTYJEsq85njx4VoW65XbLI5HalgZpigrlFu-QFVl6zGrKpPiIe3LvnCbnVJ5U
+    client_secret: EI94BbUDGbpM6Kti7ihVE_g-FOAVENL6b6lfUpJIELisNmpzRUmNMawZO81Wz0YUPtCJEVRQwQIi6Mpl

@@ -2,3 +2,6 @@ kivy
 cython
 flask 
 flask_sqlalchemy
+pyyaml
+python-dotenv
+pyyaml
